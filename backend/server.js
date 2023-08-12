@@ -1,15 +1,18 @@
 //requires
 const express = require('express');
-const connectDB = require("./config/connectDB");
+// const connectDB = require("./config/connectDB");
 const dotenv = require("dotenv").config();
 const mongoose = require("mongoose");
-const Task = require("./models/taskModel")
+const Task = require("./models/taskModel");
+const cors = require('cors');
 
 //variables
 const app = express();
 const PORT = process.env.PORT || 5000;
 
 //* Routes
+
+app.use(cors())
 app.get('/',(req,res)=>{
     console.log(`request made on ${req.url}`);
     res.send("Hello World!!");
