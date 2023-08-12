@@ -12,7 +12,9 @@ const PORT = process.env.PORT || 5000;
 
 //* Routes
 
-app.use(cors())
+app.use(cors({
+    origin: ["http://localhost:3000","https://mern-task-manager-frontend-dxar.onrender.com"]
+}))
 app.get('/',(req,res)=>{
     console.log(`request made on ${req.url}`);
     res.send("Hello World!!");
